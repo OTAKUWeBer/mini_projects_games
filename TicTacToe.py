@@ -24,14 +24,54 @@ def check_win(board, player):
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Vertical
         [0, 4, 8], [2, 4, 6]              # Diagonal
     ]
-    return any(all(board[i] == player for i in condition) for condition in win_conditions)
+    for condition in win_conditions:
+        if all(board[i] == player for i in condition):
+            return True
+    return False
 
 def check_draw(board):
     return all(space in ['X', 'O'] for space in board)
 
+def minimax(board, is_maximizing):
+    if check_win(board, 'X'):
+        return -1
+    if check_win(board, 'O'):
+        return 1
+    if check_draw(board):
+        return 0
+
+    if is_maximizing:
+        best_score = -float('inf')
+        for i in range(9):
+            if board[i] not in ['X', 'O']:
+                board[i] = 'O'
+                score = minimax(board, False)
+                board[i] = str(i + 1)
+                best_score = max(score, best_score)
+        return best_score
+    else:
+        best_score = float('inf')
+        for i in range(9):
+            if board[i] not in ['X', 'O']:
+                board[i] = 'X'
+                score = minimax(board, True)
+                board[i] = str(i + 1)
+                best_score = min(score, best_score)
+        return best_score
+
 def play_computer(board):
-    available_moves = [i for i, x in enumerate(board) if x not in ['X', 'O']]
-    return random.choice(available_moves)
+    best_score = -float('inf')
+    best_move = None
+    for i in range(9):
+        if board[i] not in ['X', 'O']:
+            board[i] = 'O'
+            score = minimax(board, False)
+            board[i] = str(i + 1)
+            if score > best_score:
+                best_score = score
+                best_move = i
+    return best_move
+
 
 def tic_tac_toe():
     while True:
@@ -40,23 +80,24 @@ def tic_tac_toe():
             break
         
         board = [str(i+1) for i in range(9)]
-        current_player = 'X'
+        current_player = 'x'
         game_ongoing = True
 
         while game_ongoing:
             print_board(board)
-            if choice == '1' or (choice == '2' and current_player == 'X'):
+            if choice == '1' or (choice == '2' and current_player == 'x'):
                 try:
                     move = int(input(f"Player {current_player}, enter your move (1-9): ")) - 1
+                    clear_screen()
                     if move < 0 or move > 8 or board[move] in ['X', 'O']:
                         raise ValueError
-                    clear_screen()
                 except ValueError:
                     clear_screen()
                     print("Invalid move! Please try again.")
                     continue
             else:
                 move = play_computer(board)
+                clear_screen()
 
             board[move] = current_player
 
