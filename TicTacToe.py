@@ -80,12 +80,12 @@ def tic_tac_toe():
             break
         
         board = [str(i+1) for i in range(9)]
-        current_player = 'x'
+        current_player = 'X'
         game_ongoing = True
 
         while game_ongoing:
             print_board(board)
-            if choice == '1' or (choice == '2' and current_player == 'x'):
+            if choice == '1' or (choice == '2' and current_player == 'X'):
                 try:
                     move = int(input(f"Player {current_player}, enter your move (1-9): ")) - 1
                     clear_screen()
