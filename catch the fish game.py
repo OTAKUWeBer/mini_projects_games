@@ -14,11 +14,11 @@ async def catch_fish(timeout, hook):
     try:
         user_input = await asyncio.wait_for(aioconsole.ainput("Your answer: "), timeout)
         if user_input == hook:
-            print('🎣 You caught the fish!')
+            print('🎣 You caught the fish!\n')
         else:
-            print('😢 The fish got away!')
+            print('😢 The fish got away!\n')
     except asyncio.TimeoutError:
-        print('\n⏰ Time\'s up! The fish escaped!')
+        print('\n⏰ Time\'s up! The fish escaped!\n')
 
 async def main():
     while True:
