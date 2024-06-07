@@ -5,7 +5,7 @@ import asyncio
 import aioconsole
 
 def generate_hook(length=4):
-    return ''.join(random.choices(string.ascii_letters, k=length))
+    return ''.join(random.choices(string.ascii_lowercase, k=length))
 
 async def catch_fish(timeout, hook):
     print(f"A fish is nibbling at your bait! Can you catch it?")
