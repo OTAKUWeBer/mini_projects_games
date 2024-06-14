@@ -1,5 +1,3 @@
-Great! Let's create a consolidated `README.md` file that covers all three projects (`catch_the_fish_game.py`, `TicTacToe.py`, `to_do_list.py`) in your repository. Each project will have its own section with relevant details.
-
 # Mini Projects and Games
 
 Welcome to the Mini Projects and Games repository! This collection features a variety of small-scale projects and games developed using Python.
@@ -13,7 +11,6 @@ Welcome to the Mini Projects and Games repository! This collection features a va
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
@@ -26,18 +23,21 @@ This repository contains a variety of mini projects and games written in Python.
 - **Description:** A simple game where you try to catch fish by clicking on them within a time limit.
 - **File:** `catch_the_fish_game.py`
 - **Location:** `projects/catch_the_fish_game/`
+- **Dependencies:** See `requirements.txt` in the project directory.
 
 ### Tic-Tac-Toe Game
 
 - **Description:** The classic Tic-Tac-Toe game where two players take turns marking spaces in a 3x3 grid.
 - **File:** `TicTacToe.py`
 - **Location:** `projects/tic_tac_toe/`
+- **Dependencies:** See `requirements.txt` in the project directory.
 
 ### To-Do List App
 
 - **Description:** A command-line to-do list manager where you can add, remove, and view tasks.
 - **File:** `to_do_list.py`
 - **Location:** `projects/to_do_list/`
+- **Dependencies:** See `requirements.txt` in the project directory.
 
 ## Installation
 
@@ -54,7 +54,12 @@ To run any of the projects, follow these steps:
    cd projects/project_name/
    ```
 
-3. **Run the project:**
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the project:**
    ```bash
    python filename.py
    ```
