@@ -1,3 +1,14 @@
+import subprocess
+import os
+
+def clear_screen():
+    if os.name == 'nt':  # For Windows
+        subprocess.run(['cls'], shell=True)
+    else:  # For Unix/Linux/Mac
+        subprocess.run(['clear'])
+        
+clear_screen()
+
 tasks_list = []
 
 def add(task):
@@ -11,9 +22,11 @@ def display_list():
     if not tasks_list:
         print("Your list is empty.")
     else:
-        print("Your task list:")
+        print("________________________")
+        print("Your task lists:")
         for index, task in enumerate(tasks_list, start=1):
             print(f"{index}. {task}")
+        print("________________________")
 
 def check(task):
     if task.lower() in (t.lower() for t in tasks_list):
@@ -33,14 +46,18 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
+        clear_screen()
         task_name = input("Enter the task: ")
         add(task_name)
     elif choice == "2":
+        clear_screen()
         display_list()
     elif choice == "3":
+        clear_screen()
         task_to_check = input("Enter the task to check: ")
         check(task_to_check)
     elif choice == "4":
+        clear_screen()
         task_to_remove = input("Enter the task to remove: ")
         remove(task_to_remove)
     elif choice == "5":
