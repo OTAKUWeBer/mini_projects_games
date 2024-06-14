@@ -78,4 +78,3 @@ Contributions to this repository are welcome! If you have a mini project or game
 ---
 
 Enjoy exploring and playing with these mini projects and games!
-```
