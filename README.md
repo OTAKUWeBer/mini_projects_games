@@ -8,9 +8,12 @@ Welcome to the Mini Projects and Games repository! This collection features a va
   - [Catch the Fish Game](#catch-the-fish-game)
   - [Tic-Tac-Toe Game](#tic-tac-toe-game)
   - [To-Do List App](#to-do-list-app)
+  - [Pig Game](#pig-game)
+  - [Match Color Game](#match-color-game)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## About
 
@@ -39,6 +42,20 @@ This repository contains a variety of mini projects and games written in Python.
 - **Location:** `projects/to_do_list/`
 - **Dependencies:** See `requirements.txt` in the project directory.
 
+### Pig Game
+
+- **Description:** A simple text-based dice game where players take turns rolling dice to accumulate points.
+- **File:** `pig.py`
+- **Location:** `projects/pig/`
+- **Dependencies:** See `requirements.txt` in the project directory (if any external dependencies are used).
+
+### Match Color Game
+
+- **Description:** A game where players match colors based on certain rules or patterns.
+- **File:** `match_color.py`
+- **Location:** `projects/match_color/`
+- **Dependencies:** See `requirements.txt` in the project directory (if any external dependencies are used).
+
 ## Installation
 
 To run any of the projects, follow these steps:
@@ -64,7 +81,7 @@ To run any of the projects, follow these steps:
    python filename.py
    ```
 
-   Replace `filename.py` with the specific file name (`catch_the_fish_game.py`, `TicTacToe.py`, `to_do_list.py`) of the project you want to run.
+   Replace `filename.py` with the specific file name (`catch_the_fish_game.py`, `TicTacToe.py`, `to_do_list.py`, `pig.py`, `match_color.py`) of the project you want to run.
 
 ## Usage
 
